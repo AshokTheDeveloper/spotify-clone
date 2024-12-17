@@ -1,22 +1,19 @@
-import React from "react";
-import { songsData } from "../../assets/assets";
+import React, { useContext } from "react";
 import { assets } from "../../assets/assets";
-import { IoMdPlay } from "react-icons/io";
-
+import { IoMdPlay, IoIosPause } from "react-icons/io";
+import { PlayerContext } from "../../context/PlayerContext";
 import "./Player.css";
 
 const Player = () => {
+  const { track, seekBg, seekBar, playStatus, play, pause, time, totalTime } =
+    useContext(PlayerContext);
   return (
     <div className="player-container">
       <div className="player-left-container">
-        <img
-          src={songsData[0].image}
-          alt="album_image"
-          className="song-album-image"
-        />
+        <img src={track.image} alt="album_image" className="song-album-image" />
         <div className="player-song-info">
-          <p>{songsData[0].name}</p>
-          <p>{songsData[0].desc.slice(0, 12)}</p>
+          <p>{track.name}</p>
+          <p>{track.desc.slice(0, 12)}</p>
         </div>
       </div>
       <div>
@@ -31,9 +28,15 @@ const Player = () => {
             alt="shuffle_icon"
             className="shuffle-icon"
           />
-          <div className="play-icon-container">
-            <IoMdPlay className="player-play-icon" />
-          </div>
+          {playStatus ? (
+            <div onClick={pause} className="play-icon-container">
+              <IoIosPause className="player-play-icon" />
+            </div>
+          ) : (
+            <div onClick={play} className="play-icon-container">
+              <IoMdPlay className="player-play-icon" />
+            </div>
+          )}
           <img
             src={assets.next_icon}
             alt="shuffle_icon"
@@ -46,11 +49,15 @@ const Player = () => {
           />
         </div>
         <div className="seek-bar-bg-container">
-          <p>1:06</p>
-          <div className="seek-bar-container">
-            <hr className="seek-bar" />
+          <p>
+            {time.currentTime.minute}:{time.currentTime.second}
+          </p>
+          <div ref={seekBg} className="seek-bar-container">
+            <hr ref={seekBar} className="seek-bar" />
           </div>
-          <p>3:01</p>
+          <p>
+            {time.totalTime.minute}:{time.totalTime.second}
+          </p>
         </div>
       </div>
       <div className="player-right-container">

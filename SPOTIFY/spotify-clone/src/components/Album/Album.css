@@ -1,5 +1,7 @@
 .album-bg-container {
   display: flex;
+  border-radius: 8px;
+  padding: 0 6px;
 }
 
 .album-wrapper {
@@ -8,9 +10,10 @@
   height: 480px;
   overflow: auto;
   padding: 8px;
-  border-radius: 4px;
   position: relative;
   width: 70%;
+  border-radius: 8px;
+  background: gray;
 }
 
 .album-container {

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useRef } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Player from "../Player/Player";
 import { albumsData, assets, songsData } from "../../assets/assets";
@@ -7,9 +7,21 @@ import Sidebar from "../Sidebar/Sidebar";
 import "./Album.css";
 
 const Album = () => {
+  const albumRef = useRef();
+  const location = useLocation();
+  const isAlbum = location.pathname.includes("album");
+
   const { id } = useParams();
   const albumData = albumsData[id];
   const { bgColor, desc, image, name } = albumData;
+
+  useEffect(() => {
+    if (isAlbum) {
+      albumRef.current.style.background = `linear-gradient(${bgColor}, #121212)`;
+    } else {
+      albumRef.current.style.background = "#121212";
+    }
+  });
 
   const renderHomeHeader = () => (
     <div className="album-navbar">
@@ -29,7 +41,7 @@ const Album = () => {
       <Header />
       <div className="album-bg-container">
         <Sidebar />
-        <div className="album-wrapper">
+        <div className="album-wrapper" ref={albumRef}>
           {renderHomeHeader()}
 
           <div className="album-container">

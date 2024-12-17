@@ -1,32 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Header from "../Header/Header";
 import Player from "../Player/Player";
-import { assets } from "../../assets/assets";
 import { albumsData } from "../../assets/assets";
 import { songsData } from "../../assets/assets";
 import AlbumItem from "../AlbumItem/AlbumItem";
 import SongItem from "../SongItem/SongItem";
-
-import "./Home.css";
 import Sidebar from "../Sidebar/Sidebar";
+import { PlayerContext } from "../../context/PlayerContext";
+import "./Home.css";
 
 const Home = () => {
-  const [expandSidebar, setSidebarExpand] = useState(false);
-
-  const sidebarExpandHandle = () => {
-    setSidebarExpand((prevState) => !prevState);
-  };
+  const { audioRef, track } = useContext(PlayerContext);
 
   const renderHomeHeader = () => (
     <div className="home-navbar">
-      {/* <div className="home-arrow-container">
-        <button>
-          <img src={assets.arrow_left} alt="arrow_left" />
-        </button>
-        <button>
-          <img src={assets.arrow_right} alt="arrow_right" />
-        </button>
-      </div> */}
       <div className="music-type-container">
         <button>All</button>
         <button>Music</button>
@@ -57,7 +44,6 @@ const Home = () => {
     </>
   );
 
-
   return (
     <>
       <Header />
@@ -72,6 +58,7 @@ const Home = () => {
         </div>
       </div>
       <Player />
+      <audio ref={audioRef} src={track.file} preload="auto"></audio>
     </>
   );
 };
