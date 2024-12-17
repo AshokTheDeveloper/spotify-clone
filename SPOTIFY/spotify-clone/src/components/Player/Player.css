@@ -1,0 +1,103 @@
+.player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  height: 80px;
+  padding-left: 18px;
+}
+
+.player-left-container {
+  display: flex;
+  align-items: flex-end;
+  width: 300px;
+}
+
+.player-song-info p {
+  font-size: 14px;
+}
+
+.song-album-image {
+  width: 50px;
+  border-radius: 4px;
+  margin-right: 16px;
+}
+
+.seek-bar-bg-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seek-bar-bg-container p {
+  font-size: 12px;
+}
+
+.seek-bar-container {
+  width: 100%;
+  background: lightgray;
+}
+
+.seek-bar {
+  height: 4px;
+  border-radius: 50px;
+  border: none;
+  width: 40%;
+  background: green;
+}
+
+.player-controllers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 533px;
+  margin-bottom: 12px;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.play-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.player-play-icon {
+  width: 22px;
+  height: 22px;
+  color: #000000;
+  padding-left: 2px;
+  margin: 0;
+}
+
+.player-controllers-container img {
+  width: 16px;
+}
+
+.player-right-container {
+  display: flex;
+  align-items: center;
+  width: 332px;
+  height: 57px;
+  /* background: gray; */
+  gap: 16px;
+}
+
+.player-right-icons {
+  width: 16px;
+}
+
+.mini-player {
+  width: 80px;
+  background: #ffffff;
+  height: 4px;
+  border-radius: 50px;
+}
+
+.player-right-icons-mini_player_icon {
+  width: 100px;
+}

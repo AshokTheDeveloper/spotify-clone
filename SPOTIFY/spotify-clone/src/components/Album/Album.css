@@ -1,0 +1,140 @@
+.album-bg-container {
+  display: flex;
+}
+
+.album-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  overflow: auto;
+  padding: 8px;
+  border-radius: 4px;
+  position: relative;
+  width: 70%;
+}
+
+.album-container {
+  display: flex;
+}
+
+.album-top-section {
+  display: flex;
+  padding: 8px;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.album-container img {
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+}
+
+.album-details-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  height: 140px;
+  width: 550px;
+  overflow: auto;
+}
+
+.album-details-container p {
+  font-size: 14px;
+}
+
+.album-details-container h1 {
+  font-size: 52px;
+  line-height: 60px;
+  margin-bottom: 16px;
+}
+
+.description-container {
+  display: flex;
+  gap: 8px;
+}
+
+.description-container p {
+  font-size: 12px;
+}
+
+.description-container img {
+  width: 22px;
+  height: 22px;
+}
+
+.clock-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.album-songs-container {
+  display: grid;
+  grid-template-columns: 450px auto auto auto;
+  gap: 16px;
+  padding: 8px;
+  border-bottom: 1px solid rgba(222, 222, 222, 0.2);
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.hash-tag {
+  margin-right: 26px;
+}
+
+.album-each-song-container {
+  display: grid;
+  grid-template-columns: 440px auto auto auto;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: 40px 60px 300px;
+  width: 300px;
+}
+
+
+.album-song-image {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  margin-right: 8px;
+  background: red;
+}
+
+.album-each-song-container p {
+  margin: 0;
+}
+
+
+
+
+/* --------------------------------------------------- */
+
+.album-navbar {
+  margin-bottom: 32px;
+  margin-left: 8px;
+}
+
+.album-arrow-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 32px;
+}
+
+.album-arrow-container img {
+  width: 16px;
+}
+
+.album-arrow-container button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

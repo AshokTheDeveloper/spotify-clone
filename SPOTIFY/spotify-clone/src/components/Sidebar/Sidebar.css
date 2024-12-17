@@ -1,0 +1,127 @@
+.sidebar-bg-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2;
+    padding: 0 8px;
+    height: 76vh;
+    background: #121212;
+    margin-right: 8px;
+    width: 414px;
+  }
+  
+  .sidebar-bg-container.expand {
+    width: 60%;
+  }
+  
+  .sidebar-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 15%;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .top-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-left: 20px;
+    cursor: pointer;
+  }
+  
+  .header-top-icons {
+    width: 26px;
+  }
+  
+  .header-top-text {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .sidebar-middle-container {
+    height: 85%;
+    border-radius: 12px;
+    padding: 12px 0px;
+  }
+  
+  .sidebar-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 38px;
+    margin-top: 12px;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  .sidebar-nav img {
+    width: 26px;
+    margin-left: 12px;
+  }
+  
+  .sidebar-nav p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .sidebar-nav-play {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .sidebar-buttons {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .play-plus-icon {
+    width: 16px;
+  }
+  
+  .play-plus-icon-back-arrow {
+    width: 23px;
+    height: 23px;
+    color: rgb(214, 214, 214);
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-bottom-container {
+    background: #242424;
+    border-radius: 4px;
+    font-weight: 500;
+    gap: 8px;
+    padding: 14px;
+    margin-bottom: 26px;
+  }
+  
+  .sidebar-bottom-container h1 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .sidebar-bottom-container p {
+    font-size: 12px;
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  
+  .sidebar-bottom-container button {
+    font-size: 12px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    height: 32px;
+    font-weight: 700;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+  }
+  

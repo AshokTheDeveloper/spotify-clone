@@ -1,0 +1,24 @@
+.song-item {
+    min-width: 180px;
+    padding: 8px 8px 12px 8px;
+    margin: 4px;
+    border-radius: 8px;
+  }
+  
+  .song-item:hover {
+    background: rgba(255, 255, 255, 0.09);
+  }
+  
+  .song-image {
+    width: 100%;
+  }
+  
+  .song-name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .song-description {
+    font-size: 12px;
+  }
+  
