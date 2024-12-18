@@ -7,13 +7,13 @@
 .album-wrapper {
   display: flex;
   flex-direction: column;
-  height: 480px;
+  height: 533px;
   overflow: auto;
   padding: 8px;
-  position: relative;
-  width: 70%;
   border-radius: 8px;
-  background: gray;
+  min-width: 818px;
+  width: 1080px;
+  position: relative;
 }
 
 .album-container {
@@ -93,6 +93,7 @@
   gap: 24px;
   margin-bottom: 12px;
   padding: 0 8px;
+  cursor: pointer;
 }
 
 .image-container {
@@ -100,7 +101,6 @@
   grid-template-columns: 40px 60px 300px;
   width: 300px;
 }
-
 
 .album-song-image {
   width: 44px;
@@ -114,8 +114,9 @@
   margin: 0;
 }
 
-
-
+.album-song-description {
+  font-size: 12px;
+}
 
 /* --------------------------------------------------- */
 

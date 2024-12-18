@@ -7,18 +7,15 @@
 .home-container {
   border-radius: 4px;
   background: #121212;
-  min-width: 414px;
-  width: 998px;
+  min-width: 818px;
+  width: 1080px;
 }
 
-.home-container {
-  width: 998px;
-}
 
 .home-music-container {
-  height: 480px;
+  height: 533px;
   overflow: auto;
-  padding: 8px;
+  padding: 8px 16px;
   padding-top: 80px;
   border-radius: 4px;
   position: relative;

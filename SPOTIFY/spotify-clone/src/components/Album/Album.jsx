@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import Player from "../Player/Player";
-import { albumsData, assets, songsData } from "../../assets/assets";
 import Sidebar from "../Sidebar/Sidebar";
+import { albumsData, assets, songsData } from "../../assets/assets";
+import { PlayerContext } from "../../context/PlayerContext";
 import "./Album.css";
 
 const Album = () => {
+  const { audioRef, track, playWithId } = useContext(PlayerContext);
   const albumRef = useRef();
   const location = useLocation();
   const isAlbum = location.pathname.includes("album");
@@ -52,7 +54,7 @@ const Album = () => {
                 <h1>{name}</h1>
                 <p>{desc}</p>
                 <div className="description-container">
-                  <img src={assets.spotify_logo} alt="" />
+                  <img src={assets.spotify_logo} alt="spotify_logo" />
                   <p>Spotify</p>
                   <p>50 songs,</p>
                   <p>About 1 hour</p>
@@ -74,7 +76,11 @@ const Album = () => {
           </div>
           <div>
             {songsData.map((eachSong, index) => (
-              <div key={index} className="album-each-song-container">
+              <div
+                onClick={() => playWithId(eachSong.id)}
+                key={index}
+                className="album-each-song-container"
+              >
                 <div className="image-container">
                   <p className="song-number">{index + 1}</p>
                   <img
@@ -82,7 +88,10 @@ const Album = () => {
                     alt="album_song"
                     className="album-song-image"
                   />
-                  <p className="album-song-name">{eachSong.name}</p>
+                  <div className="album-name-desc-container">
+                    <p className="album-song-name">{eachSong.name}</p>
+                    <p className="album-song-description">{eachSong.desc}</p>
+                  </div>
                 </div>
                 <p>Happy</p>
                 <p>5 days ago</p>
@@ -93,6 +102,7 @@ const Album = () => {
         </div>
       </div>
       <Player />
+      <audio preload="auto" ref={audioRef} src={track.file}></audio>
     </div>
   );
 };

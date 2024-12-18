@@ -36,6 +36,7 @@
 .seek-bar-container {
   width: 100%;
   background: lightgray;
+  cursor: pointer;
 }
 
 .seek-bar {

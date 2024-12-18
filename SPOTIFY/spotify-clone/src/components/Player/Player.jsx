@@ -5,8 +5,18 @@ import { PlayerContext } from "../../context/PlayerContext";
 import "./Player.css";
 
 const Player = () => {
-  const { track, seekBg, seekBar, playStatus, play, pause, time, totalTime } =
-    useContext(PlayerContext);
+  const {
+    track,
+    seekBg,
+    seekBar,
+    playStatus,
+    play,
+    pause,
+    time,
+    previous,
+    next,
+    seekSong,
+  } = useContext(PlayerContext);
   return (
     <div className="player-container">
       <div className="player-left-container">
@@ -24,6 +34,7 @@ const Player = () => {
             className="shuffle-icon"
           />
           <img
+            onClick={previous}
             src={assets.prev_icon}
             alt="shuffle_icon"
             className="shuffle-icon"
@@ -38,6 +49,7 @@ const Player = () => {
             </div>
           )}
           <img
+            onClick={next}
             src={assets.next_icon}
             alt="shuffle_icon"
             className="shuffle-icon"
@@ -52,11 +64,12 @@ const Player = () => {
           <p>
             {time.currentTime.minute}:{time.currentTime.second}
           </p>
-          <div ref={seekBg} className="seek-bar-container">
+          <div onClick={seekSong} ref={seekBg} className="seek-bar-container">
             <hr ref={seekBar} className="seek-bar" />
           </div>
           <p>
-            {time.totalTime.minute}:{time.totalTime.second}
+            {time ? time.totalTime.minute : ""}:
+            {time ? time.totalTime.second : ""}
           </p>
         </div>
       </div>
